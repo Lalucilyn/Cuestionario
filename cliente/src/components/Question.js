@@ -7,7 +7,7 @@ return (<div id="question">
   <div id="answers">
   	{props.options.map(option=>
     	<label>
-      		<input type="radio" name="question" key={option} value={option}/>
+      		<input type="radio" name="question" key={option} value={option} onChange={props.change}/>
       		<span>{option}</span>
     	</label>)}
    </div>	

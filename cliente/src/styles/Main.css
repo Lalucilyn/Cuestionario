@@ -54,7 +54,7 @@ h1 {
   color:#DD2D4C;
 }
 
-input[type="button"]{
+input[type="button"], input[type="submit"]{
   background:linear-gradient(30deg, #DD2D4C,#C52844);
   width:100%;
   height:65px;
@@ -65,6 +65,21 @@ input[type="button"]{
   text-transform:uppercase;
   font-weight:bold;
   font-size:20px;
+}
+
+#send {
+  background:linear-gradient(30deg, #DD2D4C,#C52844);
+
+}
+
+#next {
+  background:darkgreen;
+}
+
+main figure {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 @media all and (max-width:980px){

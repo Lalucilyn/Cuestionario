@@ -1,5 +1,5 @@
 const self = {};
-const questions = [
+let questions = [
 {
 	question:"¿Dentro de qué elemento del HTML se puede incluir código JavaScript?",
 	rightAnswer:"<script>",
@@ -76,9 +76,10 @@ const questions = [
 	wrongAnswers:["Un array nuevo con todos los elementos que cumplan una condición dada","El índice del primer elemento de un array que cumpla con una condición dada","Ninguna de las opciones es correcta"]
 }
 ];
+
 questions.map((question,index)=>question.number=index);
 
-self.schuffle = (items) => {
+const schuffle = (items) => {
 	for(let i=0;i<items.length;i++){
 		let randomNumber = Math.floor(Math.random()*items.length)
 		let save = items[i]
@@ -88,7 +89,18 @@ self.schuffle = (items) => {
     return items
 }
 
-self.ChosenQuestions = self.schuffle(questions).splice(0,11);
+let ChosenQuestions = schuffle(questions)
+console.log(ChosenQuestions)
+ChosenQuestions.map(question=>{
+	console.log(question.wrongAnswers)
+	console.log(question.rightAnswer)
+	const arrayAnswers=[...question.wrongAnswers,question.rightAnswer];
+	question.options = schuffle(arrayAnswers);
+})
+console.log(ChosenQuestions)
+
+self.questions = ChosenQuestions;
 
 export default self;
 
+//vas a hacer el schuffle de opciones acá y mandarlo directamente armado al state
