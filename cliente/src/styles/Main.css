@@ -19,6 +19,7 @@ header, main {
   justify-content:center;
   align-items:center;
     padding:8px;
+  border:var(--standardBorder);
 }
 
 header {
@@ -27,7 +28,7 @@ header {
   align-items:center;
   flex-wrap:wrap;
   text-align:center;
-  height:18vh;
+  height:14vh;
 }
 
 main {
@@ -41,7 +42,7 @@ main img {
 }
 
 main form {
-  width:70%;
+  width:var(--mainItemWidth);
   height:auto;
   display:flex;
   flex-direction:column;
@@ -54,18 +55,6 @@ h1 {
   color:#DD2D4C;
 }
 
-input[type="button"], input[type="submit"]{
-  background:linear-gradient(30deg, #DD2D4C,#C52844);
-  width:100%;
-  height:65px;
-  border:5px solid #9D2036;
-  border-radius:9px;
-  margin-bottom:36px;
-  color:white;
-  text-transform:uppercase;
-  font-weight:bold;
-  font-size:20px;
-}
 
 #send {
   background:linear-gradient(30deg, #DD2D4C,#C52844);

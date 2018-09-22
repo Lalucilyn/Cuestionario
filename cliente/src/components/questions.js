@@ -16,7 +16,7 @@ let questions = [
 	wrongAnswers:["msgBox('Hello World');","alertBox('Hello World');","msg('Hello World');"]
 },
 {
-	question:"¿Cuál es la forma correcta de escribir un condicional que se ejecute en caso que 'i' sea distinto de 5?",
+	question:"¿Cómo se escribe un condicional para el caso de que 'i' sea distinto a 5?",
 	rightAnswer:"if(i != 5)",
 	wrongAnswers:["if i <> 5","if (i <> 5)","if i =! 5 then"]
 },
@@ -37,8 +37,8 @@ let questions = [
 },
 {
 	question:"¿Cuál de los siguientes modos de escribir un array es correcto?",
-	rightAnswer:'let dinosaurios = ["Tiranosaurio", "Velocirraptor", "Apatosaurio"]',
-	wrongAnswers:['let dinosaurios = "Tiranosaurio", "Velocirraptor"," Apatosaurio"','let dinosaurios = (1:"Tiranosaurio", 2:"Velocirraptor", 3:"Apatosaurio")','let dinosaurios = 1 = ("Tiranosaurio"), 2 = ("Velocirraptor"), 3 = ("Apatosaurio")']
+	rightAnswer:'let gatos = ["Garfield", "Felix", "Salem"]',
+	wrongAnswers:['let gatos = "Garfield", "Felix"," Salem"','let gatos = (1:"Garfield", 2:"Felix", 3:"Salem")','let gatos = 1 = ("Garfield"), 2 = ("Felix"), 3 = ("Salem")']
 },
 {
 	question:"¿Cuál de las siguientes es la forma correcta de redondear 7.5 al entero más cercano?",
@@ -56,12 +56,12 @@ let questions = [
 	wrongAnswers:["false","null","undefined"]
 },
 {
-	question:"¿Cuál de los siguientes métodos quita el último elemento de un array y retorna dicho elemento?",
+	question:"¿Cuál de los siguientes métodos quita el último elemento de un array y lo retorna?",
 	rightAnswer:"pop()",
 	wrongAnswers:["last()","get()","splice()"]
 },
 {
-	question:"¿Cuál de los siguientes métodos quita el primer elemento de un array y retorna dicho elemento?",
+	question:"¿Cuál de los siguientes métodos quita el primer elemento de un array y lo retorna?",
 	rightAnswer:"shift()",
 	wrongAnswers:["pop()","splice()","get()"]
 },
@@ -90,17 +90,17 @@ const schuffle = (items) => {
 }
 
 let ChosenQuestions = schuffle(questions)
-console.log(ChosenQuestions)
+//console.log(ChosenQuestions)
 ChosenQuestions.map(question=>{
-	console.log(question.wrongAnswers)
-	console.log(question.rightAnswer)
+	//console.log(question.wrongAnswers)
+	//console.log(question.rightAnswer)
 	const arrayAnswers=[...question.wrongAnswers,question.rightAnswer];
 	question.options = schuffle(arrayAnswers);
 })
-console.log(ChosenQuestions)
-
-self.questions = ChosenQuestions;
-
+//console.log(ChosenQuestions)
+//self.questions=ChosenQuestions
+self.questions = ChosenQuestions.slice(0,5);
+console.log(self.questions)
 export default self;
 
-//vas a hacer el schuffle de opciones acá y mandarlo directamente armado al state
+//ahora es mejor, pero la posta va a ser hacer que mande todas las preguntas, cosa de poder reiniciar partida sin tener que recargar la página

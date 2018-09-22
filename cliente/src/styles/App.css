@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 :root {
  --standardShadow:0 -2px 15px 0 rgba(0, 0, 0, 0.15), 0 15px 18px 0 rgba(0, 0, 0, 0.34);
+ --standardBorder:5px solid black;
+ --mainItemWidth:70%;
 };
 
 * {
@@ -15,3 +17,11 @@ html {
     font-family:"Roboto";
 }
 
+input[type="button"]{
+  height:65px;
+  border-radius:9px;
+  color:white;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:20px;
+}
