@@ -8,22 +8,14 @@ return (<div id="question">
   <h2>{props.question}</h2>
   <div id="answers">
   	{props.options.map(option=>
-    	<label>
-      		<input type="radio" name="question" key={option} value={option} onChange={props.change}/>
-      		<span>{option}</span>
-    	</label>)}
+    	<label htmlFor="option"
+        key={option} 
+        onClick={props.change}>
+      	<input type="radio" name="option" disabled={props.sent===true} value={option} />
+        <span>{option}</span>
+      </label>)}
    </div>
-   {props.sent && (
-   	<p
-   	className="questionResult"
-   	style={rightnessStyle}>
-   	{props.right?"¡Respuesta correcta! ¡Wiiiii!":"¡Oh noes! ¡Respuesta incorrecta!"}
-   	</p>)}
-    {props.error && (
-   	<p
-   	className="questionResult">
-   	¡Debes seleccionar una opción!
-   	</p>)}
+
 </div>
 
 )}

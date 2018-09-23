@@ -1,90 +1,57 @@
-
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
 
 .container {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-top:12px;
-}
-header, main {
-  margin:6px 0;
-  background-color:white;
-  width:85%;
-  margin-bottom:1.7vh;
-  -webkit-box-shadow: var(--standardShadow);
-  -moz-box-shadow: var(--standardShadow);
-  box-shadow: var(--standardShadow);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-    padding:8px;
-  border:var(--standardBorder);
+  width:35%;
+  margin:var(--standardHalfDistance);
+  padding:var(--standardDistance);
 }
 
-header {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  text-align:center;
-  height:14vh;
+header, main {
+  background:white;
+  box-shadow:var(--standardShadow);
+  border:var(--standardBorder);
+  margin-bottom:var(--standardDistance);
+  padding:0 var(--standardHalfDistance);
 }
 
 main {
-  height:70vh;
-  margin-bottom:8px;
-}  
+  height:480px;
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  align-items:center;
+  justify-content:center;
+  padding-bottom:var(--standardDistance)
+}
 
-main img {
-  width:280px;
+h1 {
+  font-size:1.5rem;
+  text-align:center;
+}
+
+main figure {
+  width:50%;
+  height:auto;
+  overflow:hidden;
+}
+
+main figure img{
+  max-width:100%;
   height:auto;
 }
 
 main form {
-  width:var(--mainItemWidth);
-  height:auto;
+  width:100%;
+  height:100%;
   display:flex;
+  justify-content:space-between;
   flex-direction:column;
-  align-items:center;
 }
-
-h1 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size:32px;
-  color:#DD2D4C;
-}
-
-
-#send {
-  background:linear-gradient(30deg, #DD2D4C,#C52844);
-
-}
-
-#next {
-  background:darkgreen;
-}
-
-main figure {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
 @media all and (max-width:980px){
-  main {
-    flex-direction:column;
-    font-size:0.75rem;
+  .container {
+    width:85%;
   }
-  main img {
-    order:2;
-  }
-
-  header,main {
+  form{
     height:auto;
-  }
-  
-  form {
-    align-items:center;
   }
 }

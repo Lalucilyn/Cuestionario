@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import '../styles/Main.css';
+//Components
 import Question from './Question';
 import Results from './Results'
 import Button from './Button'
+import Message from './Message'
+//Style
+import '../styles/Main.css';
+//Modules
 import CurrentQuestions from './questions'
-import Robot from './arobot.png'
+
 
 class Main extends Component {
   state = {
@@ -29,15 +33,14 @@ class Main extends Component {
 
   /*************************************HANDLERS**************************************/
   
-  //Guarda el valor del radiobutton clickeado el state
+  //Cuando se clickea un radiobutton, guarda el valor en el state
   handleInputChange = (e) => {
     console.log(e.target.value);
     this.setState({chosen:e.target.value})
     console.log(this.state.questions)
   }
   
-  //Cuando se presiona "responder" ompara el valor seleccionado con la respuesta correcta
-
+  //Cuando se presiona "responder" compara el valor seleccionado con la respuesta correcta
   handleAnswerInput = (e) => {
    const chosen = this.state.chosen;
    //Si no se clickeó nada, se actualiza el state para mostrar error y sale
@@ -64,7 +67,7 @@ class Main extends Component {
       current:current,
       sent:false,
       chosen:"",
-      right:"",
+      right:false,
       points:points
     })
   }
@@ -97,11 +100,11 @@ render() {
        </h1>
      </header>
      <main>
-       <img src={Robot} alt="Imagen decorativa de un robot"/>
+
        {/*Si el contador de preguntas (this.state.current) no llegó a cinco, 
        va renderizando la que corresponda. Cuando llega a cinco, 
        muestra los resultados*/}
-       {this.state.current<5
+       {this.state.current<15
        ?
        <form type="post">
         
@@ -113,11 +116,17 @@ render() {
          right={this.state.right}
          error={this.state.error}
          />
+         <div>
          <Button 
          sent={this.state.sent}
          answerInput={this.handleAnswerInput} 
          nextInput={this.handleNextInput}
          />
+         <Message
+         error={this.state.error} 
+         sent={this.state.sent} 
+         right={this.state.right}/>
+        </div>
         </form>
         :
         <Results score={this.state.points} finish={this.handleFinishInput}/>
