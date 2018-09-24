@@ -13,9 +13,13 @@ CUESTIONARIO
 instrucciones para probar este proyecto:
 
 ✨Clonar el repositorio
+
 ✨Abrir una terminal
+
 ✨Instalar los módulos de Node (npm install)
+
 ✨Iniciar la aplicación (npm start)
+
 ✨Abrir el navegador en Localhost 3000
 
 
@@ -32,7 +36,11 @@ QUESTIONAIRE
 how to test this proyect
 
 ✨Clone this whole repository
+
 ✨Open a terminal
+
 ✨Install node modules (npm install)
+
 ✨Run the application (npm start)
+
 ✨Open the web browser in Localhost 3000
