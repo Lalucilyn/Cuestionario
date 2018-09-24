@@ -3,6 +3,7 @@
 .container {
   width:35%;
   margin:var(--standardHalfDistance);
+  margin-top:0px;
   padding:var(--standardDistance);
 }
 
@@ -10,23 +11,34 @@ header, main {
   background:white;
   box-shadow:var(--standardShadow);
   border:var(--standardBorder);
-  margin-bottom:var(--standardDistance);
-  padding:0 var(--standardHalfDistance);
+ 
+  
+  border-radius:5px;
+}
+
+header {
+  margin-top:var(--bigDistance);
+   margin-bottom:var(--standardDistance);
+  padding:var(--standardDistance);
 }
 
 main {
-  height:480px;
+
+  height:440px;
   display:flex;
   flex-direction:column;
   align-content:center;
   align-items:center;
   justify-content:center;
-  padding-bottom:var(--standardDistance)
+  padding:var(--bigDistance);
+  margin-bottom:var(--bigDistance);
 }
 
 h1 {
+  font-family: 'Archivo Black', sans-serif;
   font-size:1.5rem;
   text-align:center;
+  color:#757575;
 }
 
 main figure {
@@ -52,6 +64,12 @@ main form {
     width:85%;
   }
   form{
+    height:auto;
+  }
+}
+
+@media all and (max-width:480px){
+  *{
     height:auto;
   }
 }

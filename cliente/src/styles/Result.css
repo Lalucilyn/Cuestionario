@@ -21,7 +21,7 @@
 }
 .resultsButton {
   width:48%;
-  background:linear-gradient(30deg, #ec407a,#ff77a9);
+  background:linear-gradient(30deg, gray,lightgray);
   border:5px solid #b4004e;
 }
 

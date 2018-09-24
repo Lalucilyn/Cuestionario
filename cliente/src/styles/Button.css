@@ -4,10 +4,22 @@
 }
 
 #send {
-  background:linear-gradient(30deg, #DD2D4C,#C52844);
-  border:5px solid #9D2036;
+  background:linear-gradient(30deg, #19947f,#20c0a4);
+  /*border:5px solid #9D2036;*/
+}
+
+input[type="button"]:hover{
+  box-shadow:2px 2px 2px #bdbdbd;
+  transform:scale(1.001);
+  cursor:pointer;
+  transition-duration:0.3s;
+
+}
+
+#send:active{
+
 }
 
 #next {
-  background:linear-gradient(30deg, #00695c,#439889);
+  background:linear-gradient(30deg, #4d6bd0,#758dda);
 }

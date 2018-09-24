@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-//Components
 import Question from './Question';
 import Results from './Results'
 import Button from './Button'
 import Message from './Message'
-//Style
 import '../styles/Main.css';
-//Modules
-import CurrentQuestions from './questions'
-
+import CurrentQuestions from './questions' //trae las preguntas
 
 class Main extends Component {
-  state = {
-    questions:CurrentQuestions.questions,
-    current:0,
-    sent:false,
-    chosen:"",
-    right:"",
-    points:0,
+  constructor(props){
+    super(props) 
+      this.initialState = {
+        questions:"",
+        current:0,
+        sent:false,
+        chosen:"",
+        right:"",
+        points:0,
+      }
+    this.state = this.initialState
   }
-
-  //Al iniciarse, se trae las preguntas del módulo importado
+  
+  //obtengo las preguntas y actualizo el state
   getQuestions = () => {
-    const questions = CurrentQuestions.questions;
+    const questions = CurrentQuestions.questions();
     return questions
   }
 
@@ -33,22 +33,19 @@ class Main extends Component {
 
   /*************************************HANDLERS**************************************/
   
-  //Cuando se clickea un radiobutton, guarda el valor en el state
+  //(radiobuttons de las opciones)
   handleInputChange = (e) => {
     console.log(e.target.value);
     this.setState({chosen:e.target.value})
     console.log(this.state.questions)
   }
   
-  //Cuando se presiona "responder" compara el valor seleccionado con la respuesta correcta
+  //(botón "responder")
   handleAnswerInput = (e) => {
    const chosen = this.state.chosen;
-   //Si no se clickeó nada, se actualiza el state para mostrar error y sale
    if(chosen===""){
-    this.setState({error:true});
+    this.setState({error:true}); //valida que se halla clickeado una opción
     return
-
-   //Si no, se verifica si lo clickeado coincide con la respuesta correcta
    }else{
      const right = this.state.questions[this.state.current].rightAnswer;
      chosen===right?this.setState({right:true}):this.setState({right:false})
@@ -56,8 +53,8 @@ class Main extends Component {
     }
   }
 
- //Al presionar "próxima pregunta" actualiza this.state.current para que pase a la siguiente
- handleNextInput = (e) => {
+  //(botón "próxima pregunta")
+  handleNextInput = (e) => {
     let current = this.state.current;
     current++
     let points = this.state.points;
@@ -72,68 +69,64 @@ class Main extends Component {
     })
   }
   
-  //Al presionar los botones del paso final, reinicia o refresca según corresponda
+  //(botones "reiniciar" y "nueva partida")
   handleFinishInput=(e)=>{
-  const value = e.target.value;
-  if(value==="nueva partida"){
-    window.location.reload();
-  }else{
-  this.setState({
-    current:0,
-    sent:false,
-    chosen:"",
-    right:"",
-    points:0,
-  })}
-  
-
+    const value = e.target.value;
+    if(value==="nueva partida"){
+      this.setState(this.initialState);
+      this.setState({questions:this.getQuestions()});
+    }else{
+      this.setState({
+        current:0,
+        points:0,
+        right:false
+      })
+    }
   }
-
-render() {
- const currentQuestion = this.state.questions[this.state.current]
  
- return (
-   <div className="container">
-     <header>
-       <h1>
-       Quiz: ¿Cuánto sabés sobre JavaScript? 
-       </h1>
-     </header>
-     <main>
+  /******************************************RENDER******************************************/ 
+  
+  render() {
+    const currentQuestion = this.state.questions[this.state.current]
+   
+    return (
+      <div className="container">
+        <header>
+          <h1>Quiz: ¿Cuánto sabés sobre JavaScript? </h1>
+        </header>
+        <main>
+          {this.state.current<this.state.questions.length
+          ?
+          <form type="post">
+            <Question 
+            question={currentQuestion.question} 
+            options={currentQuestion.options} 
+            change={this.handleInputChange.bind(this)}
+            sent={this.state.sent}
+            right={this.state.right}
+            error={this.state.error}
+            />
+            <div>
+            <Button 
+            sent={this.state.sent}
+            answerInput={this.handleAnswerInput.bind(this)} 
+            nextInput={this.handleNextInput.bind(this)}
+            />
+            <Message
+            error={this.state.error} 
+            sent={this.state.sent} 
+            right={this.state.right}/>
+           </div>
+           </form>
+           :
+           <Results 
+           score={this.state.points} 
+           finish={this.handleFinishInput.bind(this)}/>
+          } 
+        </main>    
+      </div>
+    )
+  }
+}
 
-       {/*Si el contador de preguntas (this.state.current) no llegó a cinco, 
-       va renderizando la que corresponda. Cuando llega a cinco, 
-       muestra los resultados*/}
-       {this.state.current<15
-       ?
-       <form type="post">
-        
-         <Question 
-         question={currentQuestion.question} 
-         options={currentQuestion.options} 
-         change={this.handleInputChange}
-         sent={this.state.sent}
-         right={this.state.right}
-         error={this.state.error}
-         />
-         <div>
-         <Button 
-         sent={this.state.sent}
-         answerInput={this.handleAnswerInput} 
-         nextInput={this.handleNextInput}
-         />
-         <Message
-         error={this.state.error} 
-         sent={this.state.sent} 
-         right={this.state.right}/>
-        </div>
-        </form>
-        :
-        <Results score={this.state.points} finish={this.handleFinishInput}/>
-       } 
-     </main>    
-   </div>
- );
-
-}}
 export default Main;
