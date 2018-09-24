@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Question.css';
+import './Question.css';
 
 const Question = (props)=>{	
 	const rightnessStyle = props.right===true?{"color":"darkgreen"}:{"color":"red"}	

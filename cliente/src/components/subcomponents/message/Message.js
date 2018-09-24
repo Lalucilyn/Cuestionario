@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Message.css';
+import './Message.css';
 const Message = (props)=>{	
 	const rightnessStyle = props.right===true?{"color":"darkgreen"}:{"color":"red"}	
   let getMessage =(props)=>{

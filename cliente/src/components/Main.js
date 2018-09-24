@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Question from './Question';
-import Results from './Results'
-import Button from './Button'
-import Message from './Message'
+import Question from './subcomponents/question/Question';
+import Results from './subcomponents/results/Results'
+import Button from './subcomponents/button/Button'
+import Message from './subcomponents/message/Message'
 import '../styles/Main.css';
 import CurrentQuestions from './questions' //trae las preguntas
 

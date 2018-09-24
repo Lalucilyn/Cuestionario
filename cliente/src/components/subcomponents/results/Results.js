@@ -1,6 +1,6 @@
 import React from 'react';
-import Robot from './arobot.png'
-import '../styles/Result.css';
+import Robot from './img/arobot.png'
+import './Results.css';
 
 const Results = (props) => {
   return(
