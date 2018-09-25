@@ -8,7 +8,7 @@ CUESTIONARIO
 -Por cada pregunta contestada se indica si se acertó o erró.
 - En el paso número seis se indica el puntaje obtenido y se invita al usuario a repetir la partida o inciar una nueva.
 
-instrucciones para probar este proyecto:
+Instrucciones para probar este proyecto:
 
 - Clonar el repositorio
 - Abrir una terminal
@@ -27,7 +27,7 @@ QUESTIONNAIRE
 - After each question, a message is displayed indicating wether the chosen answer was right or wrong.
 - After the last question, a final score will be displayed and the user will be able to either repeat the questionnaire or start a new one.
 
-how to test this project
+How to test this project
 
 - Clone this whole repository
 - Open a terminal
@@ -35,7 +35,7 @@ how to test this project
 - Run the application (npm start)
 - Open the web browser in Localhost 3000
 
-credits
+Credits
 - The image featured in the last screen was downloaded from https://es.kisspng.com
 - All questions featured in this app were translated from quizzes from www.w3schools.com and www.tutorialspoint.com
 
