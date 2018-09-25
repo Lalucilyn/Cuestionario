@@ -3,8 +3,8 @@ import Question from './subcomponents/question/Question';
 import Results from './subcomponents/results/Results'
 import Button from './subcomponents/button/Button'
 import Message from './subcomponents/message/Message'
-import '../styles/Main.css';
-import CurrentQuestions from './questions' //trae las preguntas
+import './MainStyle.css';
+import CurrentQuestions from './data/questions' //trae las preguntas
 
 class Main extends Component {
   constructor(props){

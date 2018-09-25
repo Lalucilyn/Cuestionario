@@ -96,11 +96,11 @@ const createQuestions = () => {
 //Recorto el array, agrego las opciones mezcladas aleatoriamente y devuelvo las preguntas
 const ChooseQuestions = () => {
   let questions = createQuestions();
-  schuffle(questions).splice(0,10)
+  schuffle(questions)
+  .splice(0,10)
   questions.map(question=>{
 	  const arrayAnswers=[...question.wrongAnswers,question.rightAnswer];
-	  question.options = schuffle(arrayAnswers);
-	  console.log(questions)
+	  return question.options = schuffle(arrayAnswers);
   })
   return questions
 }
@@ -108,5 +108,4 @@ const ChooseQuestions = () => {
 //Guardo en objeto y exporto
 self.questions = ChooseQuestions
 
-console.log(self.questions)
 export default self;

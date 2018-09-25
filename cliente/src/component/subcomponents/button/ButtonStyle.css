@@ -4,7 +4,7 @@
 }
 
 #send {
-  background:linear-gradient(30deg, #19947f,#20c0a4);
+  background:linear-gradient(30deg, #af8eb5,#e1bee7);
   /*border:5px solid #9D2036;*/
 }
 
@@ -21,5 +21,5 @@ input[type="button"]:hover{
 }
 
 #next {
-  background:linear-gradient(30deg, #4d6bd0,#758dda);
+  background:linear-gradient(30deg, #9499b7,#c5cae9);
 }

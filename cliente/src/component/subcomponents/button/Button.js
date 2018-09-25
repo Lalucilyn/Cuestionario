@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button.css';
+import './ButtonStyle.css';
 
 const Button = (props)=>{
 return (<div id="buttonWrap">

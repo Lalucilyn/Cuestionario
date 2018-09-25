@@ -6,11 +6,23 @@
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
 }
 
+#resultDisplay {
+  min-height:320px;
+  display:grid;
+  grid-template-columns:3fr 2fr;
+  justify-content:space-between;
+  align-items:center;
+  grid-column-gap:5px;
+  margin:var(--standardDistance);
+}
+
+
+
 #results figure {
-  width:50%;
-  height:200px;
+   height:200px;
   display:grid;
   justify-content:center;
 }
@@ -21,7 +33,7 @@
 }
 .resultsButton {
   width:48%;
-  background:linear-gradient(30deg, gray,lightgray);
+  background:linear-gradient(30deg, #836fa9,#b39ddb);
   border:5px solid #b4004e;
 }
 

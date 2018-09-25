@@ -1,0 +1,53 @@
+#question{
+  margin-top:var(--bigDistance);
+  width:100%;
+  min-height:350px;
+}
+
+label {
+  display:grid;
+  grid-template-columns:1fr 9fr;
+  align-items:center;
+  font-size:1.1rem;
+  margin-top:var(--standardHalfDistance);
+}
+
+label input {
+  width:20px;
+  height:20px;
+  background:pink;
+  opacity:0.75;
+}
+
+h2 {
+  font-size:1.25rem;
+  margin:var(--standardDistance) 0;
+}
+
+/*rever. Los botones del paso 6 podrían ser !=*/
+input[type="button"]{
+  margin-top:var(--standardDistance);
+  height:65px;
+  border:none;
+  border-radius:5px;
+  color:white;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:20px;
+}
+
+@media all and (max-width:980px){
+  input[type="button"]{
+    font-size:16px;
+  }
+}
+
+@media all and (max-width:980px){
+  label {
+    font-size:1.15rem;
+  }
+
+  #question{
+    min-height:360px;
+  }
+}

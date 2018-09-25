@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+
+.container {
+  align-self:center;
+  justify-self:center;
+  width:35%;
+  background:white;
+  box-shadow:0 -2px 15px 0 rgba(0, 0, 0, 0.15), 0 15px 18px 0 rgba(0, 0, 0, 0.34);
+  margin:var(--standardHalfDistance);
+  padding:var(--standardDistance);
+  border-radius:10px;
+  height:620px;
+}
+
+header {
+  padding-bottom:var(--standardHalfDistance);
+  border-bottom:1px solid var(--aBlack);
+}
+
+@media all and (max-width:980px){
+  .container {
+    width:85%;
+  }
+}
