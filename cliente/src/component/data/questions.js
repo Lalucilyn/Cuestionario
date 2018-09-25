@@ -25,7 +25,7 @@ const createQuestions = () => {
 		wrongAnswers:["shift()","unshift()","pop()"]
 	},
 	{
-		question:"¿Cuál es el código correcto para escribir 'hola mundo' en un alert?",
+		question:"¿Cuál es el código correcto para escribir 'Hello World' en un alert?",
 		rightAnswer:"alert('Hello World');",
 		wrongAnswers:["msgBox('Hello World');","alertBox('Hello World');","msg('Hello World');"]
 	},
