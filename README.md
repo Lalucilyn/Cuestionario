@@ -16,6 +16,9 @@ instrucciones para probar este proyecto:
 - Iniciar la aplicación (npm start)
 - Abrir el navegador en Localhost 3000
 
+Créditos:
+- La imagen utilizada en el paso 6 fue descargada de y https://es.kisspng.com
+- Las preguntas utilizadas para la elaboración de este cuestionario fueron tomadas y traducidas de www.w3schools.com y www.tutorialspoint.com
 
 QUESTIONAIRE
 
@@ -24,10 +27,16 @@ QUESTIONAIRE
 - After each question, a message is displayed indicating wether it was right or wrond
 - After the last question, a final score will be displayed and the user will be able to either repeat the questionaire or start a new one.
 
-how to test this proyect
+how to test this project
 
 - Clone this whole repository
 - Open a terminal
 - Install node modules (npm install)
 - Run the application (npm start)
 - Open the web browser in Localhost 3000
+
+credits
+- The image featured in the last screen was downloaded from https://es.kisspng.com
+- All questions featured in this app where translated from quizzes from www.w3schools.com and www.tutorialspoint.com
+
+- Las preguntas utilizadas para la elaboración de este cuestionario fueron tomadas y traducidas de www.tutorialspoint.com
