@@ -1,25 +1,15 @@
-
 #buttonWrap, .questionButton {
-  width:100%;
+	width:100%;
 }
 
 #send {
-  background:linear-gradient(30deg, #af8eb5,#e1bee7);
-  /*border:5px solid #9D2036;*/
-}
-
-input[type="button"]:hover{
-  box-shadow:2px 2px 2px #bdbdbd;
-  transform:scale(1.001);
-  cursor:pointer;
-  transition-duration:0.3s;
-
-}
-
-#send:active{
-
+	background:-webkit-linear-gradient(300deg, #af8eb5, #e1bee7);
+	background:-o-linear-gradient(300deg, #af8eb5, #e1bee7);
+	background:linear-gradient(30deg, #af8eb5, #e1bee7);
 }
 
 #next {
-  background:linear-gradient(30deg, #9499b7,#c5cae9);
+	background:-webkit-linear-gradient(210deg, #9499b7, #c5cae9);
+	background:-o-linear-gradient(210deg, #9499b7, #c5cae9);
+	background:linear-gradient(300deg, #9499b7, #c5cae9);
 }

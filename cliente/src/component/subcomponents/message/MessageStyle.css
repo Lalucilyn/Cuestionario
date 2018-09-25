@@ -1,4 +1,5 @@
 .questionResult {
-  height:42px;
-  text-align:center;
+	padding-top:var(--standardDistance);
+	height:42px;
+	text-align:center;
 }

@@ -1,33 +1,62 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+/*Vaiables*/
 :root {
- --bigDistance:44px;
- --standardDistance:12px;
- --standardHalfDistance:6px;
- --aBlack:#263238;
+	/*--bigDistance:44px;*/
+	--standardDistance:12px;
+	--standardHalfDistance:6px;
+	--aBlack:#263238;
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
 }
 
 html {
-  background: var(--darkGray);  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  height:100vh;
-  font-family:"Roboto Slab";
-  color:var(--aBlack);
+	background: var(--darkGray);  
+  background: -webkit-linear-gradient(left, #eef2f3, #8e9eab);
+  background: -o-linear-gradient(left, #eef2f3, #8e9eab);
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+	height:100vh;
+	font-family:"Roboto Slab";
+	color:var(--aBlack);
 }
 
 body,#root {
-  height:100%;
+	height:100%;
 }
 
 .App {
-  height:100%;
-  display:grid;
+	height:100%;
+	display:grid;
 }
 
+/*Estilos generales que se utilizan en varios subcomponentes*/
+input[type="button"]:hover{
+	box-shadow:2px 2px 2px #bdbdbd;
+	transform:scale(1.001);
+	cursor:pointer;
+	transition-duration:0.3s;
+}
+
+input[type="button"]{
+  margin-top:var(--standardDistance);
+  height:65px;
+  border:none;
+  border-radius:5px;
+  color:white;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:20px;
+}
+
+input[type="button"]:focus{
+	outline:none;
+}
+
+@media all and (max-width:980px){
+  input[type="button"]{
+    font-size:16px;
+  }
+}

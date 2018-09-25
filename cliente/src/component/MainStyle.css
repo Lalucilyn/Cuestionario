@@ -9,7 +9,7 @@
   margin:var(--standardHalfDistance);
   padding:var(--standardDistance);
   border-radius:10px;
-  height:620px;
+  height:600px;
 }
 
 header {
@@ -20,5 +20,6 @@ header {
 @media all and (max-width:980px){
   .container {
     width:85%;
+    margin:var(--standardDistance);
   }
 }

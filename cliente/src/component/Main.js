@@ -20,7 +20,7 @@ class Main extends Component {
     this.state = this.initialState
   }
   
-  //obtengo las preguntas y actualizo el state
+  //El componente se inicia => obtengo las preguntas y las guardo en el state
   getQuestions = () => {
     const questions = CurrentQuestions.questions();
     return questions
@@ -33,15 +33,13 @@ class Main extends Component {
 
   /*************************************HANDLERS**************************************/
   
-  //(radiobuttons de las opciones)
-  handleInputChange = (e) => {
+  handleRadiobutton = (e) => {
     console.log(e.target.value);
     this.setState({chosen:e.target.value})
     console.log(this.state.questions)
   }
   
-  //(botón "responder")
-  handleAnswerInput = (e) => {
+  handleAnswerButton = (e) => {
    const chosen = this.state.chosen;
    if(chosen===""){
     this.setState({error:true}); //valida que se halla clickeado una opción
@@ -53,8 +51,7 @@ class Main extends Component {
     }
   }
 
-  //(botón "próxima pregunta")
-  handleNextInput = (e) => {
+  handleNextButton = (e) => {
     let current = this.state.current;
     current++
     let points = this.state.points;
@@ -69,8 +66,7 @@ class Main extends Component {
     })
   }
   
-  //(botones "reiniciar" y "nueva partida")
-  handleFinishInput=(e)=>{
+  handleFinishButtons=(e)=>{
     const value = e.target.value;
     if(value==="nueva partida"){
       this.setState(this.initialState);
@@ -101,7 +97,7 @@ class Main extends Component {
             <Question 
             question={currentQuestion.question} 
             options={currentQuestion.options} 
-            change={this.handleInputChange.bind(this)}
+            change={this.handleRadiobutton.bind(this)}
             sent={this.state.sent}
             right={this.state.right}
             error={this.state.error}
@@ -109,8 +105,8 @@ class Main extends Component {
             <div>
             <Button 
             sent={this.state.sent}
-            answerInput={this.handleAnswerInput.bind(this)} 
-            nextInput={this.handleNextInput.bind(this)}
+            answerInput={this.handleAnswerButton.bind(this)} 
+            nextInput={this.handleNextButton.bind(this)}
             />
             <Message
             error={this.state.error} 
@@ -121,7 +117,7 @@ class Main extends Component {
            :
            <Results 
            score={this.state.points} 
-           finish={this.handleFinishInput.bind(this)}/>
+           finish={this.handleFinishButtons.bind(this)}/>
           } 
         </main>    
       </div>
