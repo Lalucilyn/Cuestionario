@@ -39,4 +39,3 @@ credits
 - The image featured in the last screen was downloaded from https://es.kisspng.com
 - All questions featured in this app where translated from quizzes from www.w3schools.com and www.tutorialspoint.com
 
-- Las preguntas utilizadas para la elaboración de este cuestionario fueron tomadas y traducidas de www.tutorialspoint.com
